@@ -1,0 +1,215 @@
+[debug] [2023-09-14T08:26:37.746Z] ----------------------------------------------------------------------
+[debug] [2023-09-14T08:26:37.749Z] Command:       /usr/local/Cellar/node/20.5.1/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-09-14T08:26:37.750Z] CLI Version:   12.5.3
+[debug] [2023-09-14T08:26:37.750Z] Platform:      darwin
+[debug] [2023-09-14T08:26:37.750Z] Node Version:  v20.5.1
+[debug] [2023-09-14T08:26:37.750Z] Time:          Thu Sep 14 2023 13:56:37 GMT+0530 (India Standard Time)
+[debug] [2023-09-14T08:26:37.750Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-14T08:26:37.823Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-14T08:26:37.823Z] > authorizing via signed-in user (spectrumftuk@gmail.com)
+[debug] [2023-09-14T08:26:37.824Z] [iam] checking project gomasjid-4a35a for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-09-14T08:26:37.826Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions [none]
+[debug] [2023-09-14T08:26:37.827Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions x-goog-quota-user=projects/gomasjid-4a35a
+[debug] [2023-09-14T08:26:37.827Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-09-14T08:26:39.439Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions 200
+[debug] [2023-09-14T08:26:39.440Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-09-14T08:26:39.440Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/gomasjid-4a35a/serviceAccounts/gomasjid-4a35a@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-09-14T08:26:39.440Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/gomasjid-4a35a/serviceAccounts/gomasjid-4a35a@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-09-14T08:26:40.952Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/gomasjid-4a35a/serviceAccounts/gomasjid-4a35a@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-09-14T08:26:40.953Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/gomasjid-4a35a/serviceAccounts/gomasjid-4a35a@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'gomasjid-4a35a'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-09-14T08:26:42.266Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a [none]
+[debug] [2023-09-14T08:26:42.785Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a 200
+[debug] [2023-09-14T08:26:42.786Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a {"projectId":"gomasjid-4a35a","projectNumber":"416819165099","displayName":"gomasjid","name":"projects/gomasjid-4a35a","resources":{"hostingSite":"gomasjid-4a35a","storageBucket":"gomasjid-4a35a.appspot.com","locationId":"europe-west2"},"state":"ACTIVE","etag":"1_cdf098bd-f04c-4f4c-b647-122785fc364a"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-09-14T08:26:42.789Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-09-14T08:26:42.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/gomasjid-4a35a
+[debug] [2023-09-14T08:26:42.790Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-09-14T08:26:42.790Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/gomasjid-4a35a
+[debug] [2023-09-14T08:26:42.792Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudbuild.googleapis.com [none]
+[debug] [2023-09-14T08:26:42.792Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudbuild.googleapis.com x-goog-quota-user=projects/gomasjid-4a35a
+[debug] [2023-09-14T08:26:42.793Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/artifactregistry.googleapis.com [none]
+[debug] [2023-09-14T08:26:42.793Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/artifactregistry.googleapis.com x-goog-quota-user=projects/gomasjid-4a35a
+[debug] [2023-09-14T08:26:44.585Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/artifactregistry.googleapis.com 200
+[debug] [2023-09-14T08:26:44.585Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-09-14T08:26:44.595Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudfunctions.googleapis.com 200
+[debug] [2023-09-14T08:26:44.595Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-09-14T08:26:44.596Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/runtimeconfig.googleapis.com 200
+[debug] [2023-09-14T08:26:44.596Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-09-14T08:26:44.597Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudbuild.googleapis.com 200
+[debug] [2023-09-14T08:26:44.597Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/gomasjid-4a35a/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-09-14T08:26:44.597Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a/adminSdkConfig [none]
+[debug] [2023-09-14T08:26:44.966Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a/adminSdkConfig 200
+[debug] [2023-09-14T08:26:44.967Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a/adminSdkConfig {"projectId":"gomasjid-4a35a","storageBucket":"gomasjid-4a35a.appspot.com","locationId":"europe-west2"}
+[debug] [2023-09-14T08:26:44.967Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/gomasjid-4a35a/configs [none]
+[debug] [2023-09-14T08:26:46.694Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/gomasjid-4a35a/configs 200
+[debug] [2023-09-14T08:26:46.695Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/gomasjid-4a35a/configs {}
+[debug] [2023-09-14T08:26:46.697Z] Validating nodejs source
+[debug] [2023-09-14T08:26:47.311Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-09-14T08:26:47.312Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-09-14T08:26:47.313Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-09-14T08:26:47.321Z] Found firebase-functions binary at '/Users/apple/Desktop/rabbitMq/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8666
+
+[debug] [2023-09-14T08:26:47.952Z] Got response from /__/functions.yaml {"endpoints":{"sendNotification":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"sendNotification"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/apple/Desktop/rabbitMq/functions (74.77 KB) for uploading 
+[debug] [2023-09-14T08:26:53.018Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/-/functions [none]
+[debug] [2023-09-14T08:26:53.735Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/-/functions 200
+[debug] [2023-09-14T08:26:53.735Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/-/functions {}
+[debug] [2023-09-14T08:26:53.737Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/gomasjid-4a35a/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-09-14T08:26:55.396Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/gomasjid-4a35a/locations/-/functions 200
+[debug] [2023-09-14T08:26:55.396Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/gomasjid-4a35a/locations/-/functions {}
+[debug] [2023-09-14T08:26:55.401Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a [none]
+[debug] [2023-09-14T08:26:55.901Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a 200
+[debug] [2023-09-14T08:26:55.901Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gomasjid-4a35a {"projectId":"gomasjid-4a35a","projectNumber":"416819165099","displayName":"gomasjid","name":"projects/gomasjid-4a35a","resources":{"hostingSite":"gomasjid-4a35a","storageBucket":"gomasjid-4a35a.appspot.com","locationId":"europe-west2"},"state":"ACTIVE","etag":"1_cdf098bd-f04c-4f4c-b647-122785fc364a"}
+[debug] [2023-09-14T08:26:55.902Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2023-09-14T08:26:55.903Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions [none]
+[debug] [2023-09-14T08:26:55.903Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions x-goog-quota-user=projects/gomasjid-4a35a
+[debug] [2023-09-14T08:26:55.903Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-09-14T08:26:57.215Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions 200
+[debug] [2023-09-14T08:26:57.216Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gomasjid-4a35a:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-09-14T08:26:57.216Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2023-09-14T08:26:57.217Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-09-14T08:26:57.217Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-09-14T08:27:05.627Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-09-14T08:27:05.627Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-546198683376.us-central1.cloudfunctions.appspot.com/b8a890cb-ee67-47e7-bf97-1aaf0bfa1083.zip?GoogleAccessId=service-416819165099@gcf-admin-robot.iam.gserviceaccount.com&Expires=1694681825&Signature=S%2BzNzU8dDxpJgCt0e4AHIziZbJk%2Fy8fJ5AGXH9wSPOYgAYcyjuh636%2FDTkvuN5I8ubpeVKokEsC7fiWdEdf6%2BHhBBYfTKosJQi8a4xmyWLR4QNmIr7dRqn%2FShyibjM02Et8JvU9B2dNyYnz8QgD5edLlFUtkBwbPNjrCYLOLyHmIpqmmxklNgJqSQ9XdD9gcoePtfUzAELHW%2BMf62G%2BZL1Xc5X9WvBRXo0EzV9SxIw0Ll%2F6cTobE9%2FuhpGjAmL5JXtcLsSRqTT9ItnctpUNNtmu24NQn6V22vBI5hJQrNXtQORXCrIPcxTjTWxKpqVE7GF176hBNAXUwTJAGOWaqJw%3D%3D"}
+[debug] [2023-09-14T08:27:05.629Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-546198683376.us-central1.cloudfunctions.appspot.com/b8a890cb-ee67-47e7-bf97-1aaf0bfa1083.zip GoogleAccessId=service-416819165099%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1694681825&Signature=S%2BzNzU8dDxpJgCt0e4AHIziZbJk%2Fy8fJ5AGXH9wSPOYgAYcyjuh636%2FDTkvuN5I8ubpeVKokEsC7fiWdEdf6%2BHhBBYfTKosJQi8a4xmyWLR4QNmIr7dRqn%2FShyibjM02Et8JvU9B2dNyYnz8QgD5edLlFUtkBwbPNjrCYLOLyHmIpqmmxklNgJqSQ9XdD9gcoePtfUzAELHW%2BMf62G%2BZL1Xc5X9WvBRXo0EzV9SxIw0Ll%2F6cTobE9%2FuhpGjAmL5JXtcLsSRqTT9ItnctpUNNtmu24NQn6V22vBI5hJQrNXtQORXCrIPcxTjTWxKpqVE7GF176hBNAXUwTJAGOWaqJw%3D%3D
+[debug] [2023-09-14T08:27:05.629Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-546198683376.us-central1.cloudfunctions.appspot.com/b8a890cb-ee67-47e7-bf97-1aaf0bfa1083.zip [stream]
+[debug] [2023-09-14T08:27:06.870Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-546198683376.us-central1.cloudfunctions.appspot.com/b8a890cb-ee67-47e7-bf97-1aaf0bfa1083.zip 200
+[debug] [2023-09-14T08:27:06.871Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-546198683376.us-central1.cloudfunctions.appspot.com/b8a890cb-ee67-47e7-bf97-1aaf0bfa1083.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 18 (1st Gen) function sendNotification(us-central1)... 
+[debug] [2023-09-14T08:27:06.876Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions [none]
+[debug] [2023-09-14T08:27:06.876Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions {"name":"projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification","sourceUploadUrl":"https://storage.googleapis.com/uploads-546198683376.us-central1.cloudfunctions.appspot.com/b8a890cb-ee67-47e7-bf97-1aaf0bfa1083.zip?GoogleAccessId=service-416819165099@gcf-admin-robot.iam.gserviceaccount.com&Expires=1694681825&Signature=S%2BzNzU8dDxpJgCt0e4AHIziZbJk%2Fy8fJ5AGXH9wSPOYgAYcyjuh636%2FDTkvuN5I8ubpeVKokEsC7fiWdEdf6%2BHhBBYfTKosJQi8a4xmyWLR4QNmIr7dRqn%2FShyibjM02Et8JvU9B2dNyYnz8QgD5edLlFUtkBwbPNjrCYLOLyHmIpqmmxklNgJqSQ9XdD9gcoePtfUzAELHW%2BMf62G%2BZL1Xc5X9WvBRXo0EzV9SxIw0Ll%2F6cTobE9%2FuhpGjAmL5JXtcLsSRqTT9ItnctpUNNtmu24NQn6V22vBI5hJQrNXtQORXCrIPcxTjTWxKpqVE7GF176hBNAXUwTJAGOWaqJw%3D%3D","entryPoint":"sendNotification","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"08e46fe4113ebe8c0eb4ef1ab1aa60c45aec43ca"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"gomasjid-4a35a\",\"storageBucket\":\"gomasjid-4a35a.appspot.com\",\"locationId\":\"europe-west2\"}","GCLOUD_PROJECT":"gomasjid-4a35a","EVENTARC_CLOUD_EVENT_SOURCE":"projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2023-09-14T08:27:07.373Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions 403
+[debug] [2023-09-14T08:27:07.374Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gomasjid-4a35a/locations/us-central1/functions {"error":{"code":403,"message":"Unable to retrieve the repository metadata for projects/gomasjid-4a35a/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.","status":"PERMISSION_DENIED"}}
+[warn] ⚠  functions: failed to create function projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification 
+[error] Failed to create function projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification
+[debug] [2023-09-14T08:27:07.381Z] Total Function Deployment time: 502
+[debug] [2023-09-14T08:27:07.381Z] 1 Functions Deployed
+[debug] [2023-09-14T08:27:07.381Z] 1 Functions Errored
+[debug] [2023-09-14T08:27:07.381Z] 0 Function Deployments Aborted
+[debug] [2023-09-14T08:27:07.381Z] Average Function Deployment time: 501
+[info] 
+[info] Functions deploy had errors with the following functions:
+	sendNotification(us-central1)
+[debug] [2023-09-14T08:27:07.684Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2023-09-14T08:27:07.688Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/gomasjid-4a35a/locations/us-central1/repositories/gcf-artifacts/packages/send_notification [none]
+[debug] [2023-09-14T08:27:07.689Z] >>> [apiv2][query] GET https://us.gcr.io/v2/gomasjid-4a35a/gcf/us-central1/tags/list [none]
+[debug] [2023-09-14T08:27:09.148Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/gomasjid-4a35a/locations/us-central1/repositories/gcf-artifacts/packages/send_notification 403
+[debug] [2023-09-14T08:27:09.148Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/gomasjid-4a35a/locations/us-central1/repositories/gcf-artifacts/packages/send_notification {"error":{"code":403,"message":"This API method requires billing to be enabled. Please enable billing on project #gomasjid-4a35a by visiting https://console.developers.google.com/billing/enable?project=gomasjid-4a35a then retry. If you enabled billing for this project recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console billing","url":"https://console.developers.google.com/billing/enable?project=gomasjid-4a35a"}]},{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"BILLING_DISABLED","domain":"googleapis.com","metadata":{"service":"artifactregistry.googleapis.com","consumer":"projects/gomasjid-4a35a"}}]}}
+[debug] [2023-09-14T08:27:09.934Z] <<< [apiv2][status] GET https://us.gcr.io/v2/gomasjid-4a35a/gcf/us-central1/tags/list 200
+[debug] [2023-09-14T08:27:09.934Z] <<< [apiv2][body] GET https://us.gcr.io/v2/gomasjid-4a35a/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"gomasjid-4a35a/gcf/us-central1","tags":[]}
+[debug] [2023-09-14T08:27:09.934Z] Could not find image for function projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification
+[warn] ⚠  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/gomasjid-4a35a/us-central1/gcf-artifacts 
+[debug] [2023-09-14T08:27:09.935Z] Functions deploy failed.
+[debug] [2023-09-14T08:27:09.935Z] {
+  "endpoint": {
+    "id": "sendNotification",
+    "project": "gomasjid-4a35a",
+    "region": "us-central1",
+    "entryPoint": "sendNotification",
+    "platform": "gcfv1",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"gomasjid-4a35a\",\"storageBucket\":\"gomasjid-4a35a.appspot.com\",\"locationId\":\"europe-west2\"}",
+      "GCLOUD_PROJECT": "gomasjid-4a35a",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "08e46fe4113ebe8c0eb4ef1ab1aa60c45aec43ca",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/gomasjid-4a35a/locations/us-central1/functions/sendNotification",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 403,
+            "message": "Unable to retrieve the repository metadata for projects/gomasjid-4a35a/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+            "status": "PERMISSION_DENIED"
+          }
+        },
+        "response": {
+          "statusCode": 403
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 403, Unable to retrieve the repository metadata for projects/gomasjid-4a35a/locations/us-central1/repositories/gcf-artifacts. Ensure that the Cloud Functions service account has 'artifactregistry.repositories.list' and 'artifactregistry.repositories.get' permissions. You can add the permissions by granting the role 'roles/artifactregistry.reader'.",
+      "status": 403
+    },
+    "status": 403,
+    "code": 403
+  }
+}
+[debug] [2023-09-14T08:27:09.989Z] Error: Failed to create function sendNotification in region us-central1
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:51:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV1Function (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:180:32)
+    at async Fabricator.createEndpoint (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:132:13)
+    at async handle (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
