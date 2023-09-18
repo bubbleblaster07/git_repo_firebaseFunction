@@ -2,7 +2,7 @@
   "name": "rabbitmq",
   "version": "1.0.0",
   "description": "",
-  "main": "consumer.js",
+  "main": "notification.js",
   "scripts": {
     "start":"node notification.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.5.0",
+
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "firebase": "^10.3.1",
-    "firebase-admin": "^11.10.1",
-    "firebase-functions": "^4.4.1",
-    "mongoose": "^7.5.0"
+    "firebase-admin": "^11.10.1"
   }
 }

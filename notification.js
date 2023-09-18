@@ -1,14 +1,33 @@
+const admin = require('firebase-admin');
+admin.initializeApp();
+const messaging = admin.messaging();
 const express = require("express");
 const app = express();
 const port = 3000;
 
 // Define a route that sends data to the client
-app.get("/sendNotification", (req, res) => {
+app.get("/sendNotification",async (req, res)=> {
   const dataToSend = {
     title: "Hello from the server",
     body: "This is the data sent from the server to the client.",
     to:"topics/all"
   };
+  const {title, to, data} = req.body;
+  const message = {
+    data: {
+      title: title,
+      body: data,
+    },
+    topic: to,
+  };
+  try {
+    await messaging().send(message);
+    console.log('Notification sent successfully');
+    return res.status(200).json({message: 'Notification sent successfully'});
+  } catch (error) {
+    console.error('Error sending notification:', error);
+    return res.status(500).json({error: 'Failed to send notification'});
+  }
 
   // Send the data as JSON to the client
   res.json(dataToSend);
