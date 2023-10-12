@@ -4,14 +4,13 @@
   "description": "",
   "main": "notification.js",
   "scripts": {
-    "start":"node notification.js",
+    "start": "node notification.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "firebase": "^10.3.1",

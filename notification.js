@@ -1,41 +1,118 @@
+const express = require('express');
 const admin = require('firebase-admin');
-admin.initializeApp();
-const messaging = admin.messaging();
-const express = require("express");
+
+const serviceAccount = require('./gomasjid-4a35a-firebase-adminsdk-mfmz2-c611c39fc8.json');
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://gomasjid-4a35a.web.app/login',
+});
+
 const app = express();
 const port = 3000;
+app.use(express.json());
 
-// Define a route that sends data to the client
-app.get("/sendNotification",async (req, res)=> {
-  const dataToSend = {
-    title: "Hello from the server",
-    body: "This is the data sent from the server to the client.",
-    to:"topics/all"
-  };
-  const {title, to, data} = req.body;
-  const message = {
-    data: {
-      title: title,
-      body: data,
-    },
-    topic: to,
-  };
+app.post('/sendNotification', async (req, res) => {
   try {
-    await messaging().send(message);
-    console.log('Notification sent successfully');
-    return res.status(200).json({message: 'Notification sent successfully'});
-  } catch (error) {
-    console.error('Error sending notification:', error);
-    return res.status(500).json({error: 'Failed to send notification'});
-  }
+    let topic;
+    const type = req.body.type || '';
+    const title = req.body.title || ''; 
+    const body = req.body.body || ''; 
+    const masjidId =req.body.masjid || '';
+    let proceed=false;  
+    console.log('Request Body:', req.body);
 
-  // Send the data as JSON to the client
-  res.json(dataToSend);
+
+
+    switch (type) {
+      case 'announcement':
+        topic = 'masjid' + (masjidId || '');
+        proceed=true
+        break;
+
+
+
+      default:
+        console.error('Unknown type:', type);
+        return res.status(400).json({ error: 'Invalid type' });
+    }
+    if(proceed){
+      const message = {
+        notification: {
+          title: title, 
+          body: body,   
+        },
+        topic: "/topics/all",
+      };
+
+      const response = await admin.messaging().send(message);
+      console.log('Notification sent successfully:', response);
+
+      res.status(200).json({ message: 'Notification sent successfully' });
+    }} catch (error) {
+      console.error('Error sending notification:', error);
+      res.status(500).json({ error: 'Failed to send notification' });
+    }
 });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const admin = require('firebase-admin');
+// admin.initializeApp();
+// const messaging = admin.messaging();
+// const express = require("express");
+// const app = express();
+// const port = 3000;
+
+// // Define a route that sends data to the client
+// app.get("/sendNotification",async (req, res)=> {
+//   const dataToSend = {
+//     title: "Hello from the server",
+//     body: "This is the data sent from the server to the client.",
+//     to:"topics/all"
+//   };
+//   // const {title, to, data} = req.body;
+//   // const message = {
+//   //   data: {
+//   //     title: title,
+//   //     body: data,
+//   //   },
+//   //   topic: to,
+//   // };
+//   // try {
+//   //   await messaging().send(message);
+//   //   console.log('Notification sent successfully');
+//   //   return res.status(200).json({message: 'Notification sent successfully'});
+//   // } catch (error) {
+//   //   console.error('Error sending notification:', error);
+//   //   return res.status(500).json({error: 'Failed to send notification'});
+//   // }
+
+//   // Send the data as JSON to the client
+//   res.json(dataToSend);
+// });
+
+// app.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });
 
 
 
