@@ -18,6 +18,7 @@ app.post('/sendNotification', async (req, res) => {
     const title = req.body.title || ''; 
     const body = req.body.body || ''; 
     const masjidId =req.body.masjid || '';
+    const masjidName=req.body.masjidName || '';
     let proceed=false;  
     console.log('Request Body:', req.body);
 
@@ -25,7 +26,7 @@ app.post('/sendNotification', async (req, res) => {
 
     switch (type) {
       case 'announcement':
-        topic = 'masjid' + (masjidId || '');
+        topic = '/topics/masjid' + (masjidId || '');
         proceed=true
         break;
 
@@ -39,9 +40,10 @@ app.post('/sendNotification', async (req, res) => {
       const message = {
         notification: {
           title: title, 
-          body: body,   
+          body: `${masjidName}:${body}`, 
+          // body:body  
         },
-        topic: "/topics/all",
+        topic: topic,
       };
 
       const response = await admin.messaging().send(message);
