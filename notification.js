@@ -6,7 +6,7 @@ admin.initializeApp({
   databaseURL: "https://gomasjid-4a35a.web.app/login",
 });
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.post("/sendNotification", async (req, res) => {
   try {
